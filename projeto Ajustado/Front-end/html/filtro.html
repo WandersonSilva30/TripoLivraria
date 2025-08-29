@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buscar Livros</title>
+  <link rel="stylesheet" href="css/filtro.css" />
+</head>
+<body>
+
+  <div class="card">
+    <h2>Buscar Livros</h2>
+
+    <div class="filters">
+      <input type="text" id="filterTitle" placeholder="Filtrar por título" />
+      <input type="text" id="filterAuthor" placeholder="Filtrar por autor" />
+      <input type="text" id="filterGenre" placeholder="Filtrar por gênero" />
+      <input type="number" id="filterYear" placeholder="Filtrar por ano" />
+    </div>
+
+    <div id="bookList" class="book-list">
+      <!-- Livros serão listados aqui -->
+    </div>
+  </div>
+
+  <script src="../js/filtro.js"></script> <!-- Este script é essencial para a funcionalidade -->
+</body>
+</html>

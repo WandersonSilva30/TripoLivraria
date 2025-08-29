@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login/Registro - Tripo Library</title>
+  <link rel="stylesheet" href="../css/Login.css"/>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">TRIPO <a  href="index.html" class="highlight">LIBRARY</a></div>
+    <nav class="nav">
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="glass-box">
+      <div class="welcome-text">
+        <h1>Bem-vindo à <span>TRIPO LIBRARY</span></h1>
+        <p>Entre para explorar milhares de livros e compartilhar suas leituras favoritas com outros amantes da literatura.</p>
+      </div>
+
+      <div class="form-container">
+        <form id="login-form">
+          <input type="text" id="login" placeholder="Usuário ou Email" required />
+          <input type="password" id="password" placeholder="Senha" required />
+          <button type="submit" class="btn">Entrar</button>
+          <p class="toggle">Não tem uma conta? <a href="#" onclick="toggleForm()">Registre-se</a></p>
+        </form>
+
+        <form id="register-form" style="display: none;">
+          <input type="text" id="register-username" placeholder="Nome de usuário" required />
+          <input type="email" id="register-email" placeholder="Email" required />
+          <input type="password" id="register-password" placeholder="Senha" required />
+          <button type="submit" class="btn">Registrar</button>
+          <p class="toggle">Já tem uma conta? <a href="#" onclick="toggleForm()">Login</a></p>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/login.js"></script>
+</body>
+</html>

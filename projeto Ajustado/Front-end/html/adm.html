@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin | TRIPO LIBRARY</title>
+    <link rel="stylesheet" href="../css/adm.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="admin-container">
+        <aside id="sidebar" class="sidebar">
+            <h2>Olá, <span>Admin</span> </h2>
+            <nav>
+                <ul>
+                    <li><a href="#" id="linkListar"><i class="fa-solid fa-list"></i> Listar Livros</a></li>
+                    <li><a href="#" id="linkCadastrar"><i class="fa-solid fa-plus"></i> Cadastrar Livro</a></li>
+                </ul>
+            </nav>
+            <div class="logout">
+                <button id="btnLogout">Sair</button>
+            </div>
+        </aside>
+
+        <main class="content">
+            <section id="sectionListar">
+                <h1>Livros Cadastrados</h1>
+                <ul id="listaLivros">
+                    <!-- A lista de livros será preenchida dinamicamente com JavaScript -->
+                </ul>
+            </section>
+
+            <section id="sectionCadastrar" style="display: none;">
+                <h1>Cadastrar Novo Livro</h1>
+                <form id="formCadastro">
+                    <input type="text" id="Titulo" placeholder="Título do Livro" required>
+                    <input type="text" id="Autor" placeholder="Autor do Livro" required>
+                    <input type="text" id="Genero" placeholder="Gênero" required>
+                    <input type="number" id="AnoPublicacao" placeholder="Ano de Publicação" required>
+                    <input type="text" id="Descricao"placeholder= "Descricao" required>
+                    <button type="submit">Cadastrar</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="../js/adm.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Empréstimos</title>
+    <link rel="stylesheet" href="../css/perfil.css">
+</head>
+<body>
+    <header>
+        <div class="user-greeting">
+            <p id="user-name">Olá, Usuário</p>
+        </div>
+        <a href="../html/dashboard.html" class="btn-voltar">Voltar</a>
+    </header>
+    
+    <main>
+        <h1>Livros Emprestados</h1>
+        <div id="livros-emprestados">
+            <!-- Os livros emprestados serão carregados aqui dinamicamente -->
+        </div>
+    </main>
+
+    <script>
+        // Função para exibir o nome do usuário
+        const userName = localStorage.getItem("userName");
+        if (userName) {
+            document.getElementById("user-name").textContent = `Olá, ${userName}`;
+        }
+    </script>
+    <script src="../js/perfil.js"></script> <!-- Corrigido o caminho do arquivo JS -->
+</body>
+</html>

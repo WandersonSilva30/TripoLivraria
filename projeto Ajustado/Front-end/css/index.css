@@ -1,0 +1,282 @@
+/* Reset e fonte */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: url('https://wallpapers.com/images/hd/livros-5013-x-4634-h99zik512sz2yilk.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 120px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 60px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.logo-header {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo-header span {
+  color: #4fc3f7;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #4fc3f7;
+}
+
+/* Container com efeito glass preto */
+.container-glass {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  padding: 50px;
+  max-width: 1000px;
+  min-height: 500px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Texto */
+.text-content {
+  flex: 1;
+  color: white;
+}
+
+.text-content h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.text-content span {
+  color: #4fc3f7;
+}
+
+.text-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #ddd;
+}
+
+.buttons button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  margin-right: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.buttons button:first-child {
+  background: #4fc3f7;
+  color: #000;
+}
+
+.buttons .outline {
+  background: transparent;
+  border: 2px solid #4fc3f7;
+  color: #4fc3f7;
+}
+
+.buttons .outline:hover {
+  background: #4fc3f7;
+  color: #000;
+}
+
+/* Imagem */
+.image-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image-content img {
+  max-width: 300px;
+  width: 100%;
+  animation: flutuar 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(79, 195, 247, 0.5));
+}
+
+/* Animação da logo */
+@keyframes flutuar {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .container-glass {
+      flex-direction: column;
+      text-align: center;
+      padding: 40px 20px;
+  }
+
+  .image-content {
+      margin-top: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+      padding-top: 80px;
+  }
+
+  header {
+      padding: 15px 30px;
+  }
+
+  .container-glass {
+      padding: 30px 15px;
+  }
+
+  .text-content h1 {
+      font-size: 32px;
+  }
+
+  .text-content p {
+      font-size: 16px;
+  }
+
+  .buttons button {
+      padding: 10px 20px;
+  }
+
+  .image-content img {
+      max-width: 250px;
+  }
+}
+
+/* Seção livros */
+.livros-section {
+  background-image: url(../Img/pexels-rickyrecap-1907785.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.livros-destaque h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #4fc3f7;
+}
+
+/* Tamanho reduzido e centralizado dos cards */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1.2s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+/* Card Flip reduzido */
+.card {
+  background: transparent;
+  width: 150px;
+  height: 220px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-back {
+  background-color: #222;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+@keyframes fadeInUp {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.livros-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}

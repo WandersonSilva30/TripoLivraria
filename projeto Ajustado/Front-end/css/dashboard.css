@@ -1,0 +1,229 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url(../Img/pexels-rickyrecap-1907785.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 30px;
+  height: 60px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #00bfff;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-greeting {
+  font-size: 16px;
+}
+
+.menu-toggle {
+  cursor: pointer;
+  width: 30px;
+  height: 22px;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+
+.menu-toggle span {
+  background: #fff;
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  border-radius: 2px;
+  transition: 0.3s ease-in-out;
+}
+
+.menu-toggle span:nth-child(1) { top: 0; }
+.menu-toggle span:nth-child(2) { top: 9px; }
+.menu-toggle span:nth-child(3) { top: 18px; }
+
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 9px;
+}
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 9px;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 30px;
+  background-color: rgba(0,0,0,0.85);
+  padding: 10px 20px;
+  border-radius: 8px;
+  z-index: 100;
+}
+
+.menu a {
+  display: block;
+  color: #ff5c5c;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  border-radius: 8px;
+}
+
+.menu a:hover {
+  background-color: rgba(255, 92, 92, 0.15);
+  transform: scaleX(1.1);
+}
+
+.menu.show {
+  display: block;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 20px;
+}
+
+.search-container input {
+  padding: 15px 20px;
+  font-size: 18px;
+  width: 60%;
+  border-radius: 30px;
+  border: 2px solid #ccc;
+  outline: none;
+}
+
+.book-card {
+  background-color: rgba(0,0,0,0.7);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px;
+  width: 280px;
+  display: inline-block;
+  vertical-align: top;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+.book-card:hover {
+  transform: scale(1.05);
+}
+
+.book-card h3 {
+  margin-top: 0;
+}
+
+.book-card p {
+  margin: 5px 0 15px;
+}
+
+.book-card button {
+  background-color: #02c4ff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 15px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.book-card button:hover {
+  background-color: #009acd;
+}
+
+.rating {
+  margin-top: 10px;
+}
+
+.star {
+  font-size: 20px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.star.selected,
+.star:hover {
+  color: gold;
+}
+
+/* 🔥 RESPONSIVIDADE 🔥 */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  .user-menu {
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  .search-container {
+    margin: 20px 0;
+  }
+
+  .search-container input {
+    width: 80%;
+    padding: 12px 15px;
+    font-size: 16px;
+  }
+
+  .book-card {
+    width: 90%;
+    max-width: 400px;
+    margin: 10px auto;
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 20px;
+  }
+
+  .search-container input {
+    width: 90%;
+    font-size: 14px;
+  }
+
+  .book-card {
+    padding: 15px;
+  }
+
+  .book-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .book-card button {
+    padding: 8px 12px;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+}
